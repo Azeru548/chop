@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- PROTECTED — WORKING IMPLEMENTATION (Scene 01, verified 2026-09-15).
+     Do not change this file's Scene 01 structure without explicit user
+     instruction. Architecture: docs/scene-01-architecture.md -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ORBIT — Scene 01 REVEAL. A scroll-controlled cinematic reveal of the ORBIT-01 autonomous exploration spacecraft.">
+  <title>ORBIT — Scene 01 / Reveal</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Orbit &mdash; Scene 01 / Reveal</p>
+    <h1 class="visually-hidden">ORBIT-01 — Scene 01, The Reveal</h1>
+  </header>
+
+  <main>
+    <section id="scene-01" aria-label="Scene 01: Reveal of the ORBIT-01 spacecraft">
+      <div class="stage" id="scene-01-stage">
+        <canvas
+          id="scene-01-canvas"
+          role="img"
+          aria-label="Scroll-controlled image sequence showing the ORBIT-01 spacecraft emerging from darkness into full illumination."
+          aria-describedby="scene-01-caption"></canvas>
+
+        <p id="scene-01-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling reveals the ORBIT-01 spacecraft from darkness into full illumination, with short on-screen titles.</p>
+
+        <div id="cine-text" class="cine-text" aria-hidden="true"></div>
+
+        <div class="overlay overlay-bottom">
+          <p class="frame-readout" aria-live="off"><span id="frame-current">001</span><span aria-hidden="true"> / </span><span>240</span></p>
+          <p class="scroll-hint" id="scroll-hint">Scroll</p>
+        </div>
+
+        <div class="timeline-progress" aria-hidden="true">
+          <div id="timeline-bar" class="timeline-bar"></div>
+        </div>
+
+        <div id="loader" class="loader" role="status" aria-live="polite">
+          <p class="loader-text">Loading sequence <span id="loader-count">0</span> / 240</p>
+          <div class="loader-track" aria-hidden="true">
+            <div id="loader-bar" class="loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img
+            class="noscript-fallback"
+            src="frames/ezgif-frame-240.jpg"
+            alt="Fully illuminated front view of the ORBIT-01 spacecraft against a black background.">
+        </noscript>
+      </div>
+    </section>
+
+    <section id="scene-02" aria-label="Scene 02: Orbit of the ORBIT-01 spacecraft">
+      <div class="stage">
+        <canvas
+          id="scene-02-canvas"
+          role="img"
+          aria-label="Scroll-controlled image sequence orbiting the ORBIT-01 spacecraft from front view around to its engines."
+          aria-describedby="scene-02-caption"></canvas>
+
+        <p id="scene-02-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling orbits the ORBIT-01 spacecraft from its illuminated front view around to a rear view of its twin engines, with short on-screen titles.</p>
+
+        <div id="cine-text-02" class="cine-text" aria-hidden="true"></div>
+
+        <div class="overlay overlay-bottom">
+          <p class="frame-readout" aria-live="off"><span id="frame-current-02">001</span><span aria-hidden="true"> / </span><span>181</span></p>
+        </div>
+
+        <div class="timeline-progress" aria-hidden="true">
+          <div id="timeline-bar-02" class="timeline-bar"></div>
+        </div>
+
+        <div id="loader-02" class="loader" role="status" aria-live="polite">
+          <p class="loader-text">Loading sequence <span id="loader-count-02">0</span> / 181</p>
+          <div class="loader-track" aria-hidden="true">
+            <div id="loader-bar-02" class="loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img
+            class="noscript-fallback"
+            src="scene-02 frames/ezgif-frame-181.jpg"
+            alt="Rear view of the ORBIT-01 spacecraft showing its twin engines against a black background.">
+        </noscript>
+      </div>
+    </section>
+
+    <section class="afterword" aria-label="End of Scene 02">
+      <p class="scene-end">Orbit complete &mdash; Scene 03 in development</p>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="scripts/scene-01.js" defer></script>
+  <script src="scripts/scene-02.js" defer></script>
+</body>
+</html>

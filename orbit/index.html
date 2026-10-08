@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!-- CHOP — Cinematic Nigerian Food Catalog.
+     Rebuilt from ORBIT (proven scroll architecture preserved).
+     See archive/ for frozen ORBIT reference files. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CHOP — A cinematic scroll through Nigeria's most iconic dishes.">
+  <title>CHOP — A Commemoration in Five Dishes</title>
+  <meta name="description" content="CHOP — a cinematic commemoration of five Nigerian dishes. Scroll the films.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo:wght@400;500;600&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Fixed dish nav -->
+  <nav class="dish-nav" aria-label="Dish catalog navigation">
+    <span class="dish-wordmark" aria-hidden="true">CHOP</span>
+    <div class="dish-nav-links">
+    <a class="dish-nav-link" href="#jollof">Jollof</a>
+    <a class="dish-nav-link" href="#kilishi">Kilishi</a>
+    <a class="dish-nav-link" href="#egusi">Egusi &amp; Eba</a>
+    <a class="dish-nav-link" href="#suya">Suya</a>
+    <a class="dish-nav-link" href="#moimoi">Moi-Moi</a>
+    </div>
+  </nav>
+
+  <!-- Landing: fullscreen hero film behind the title, sticky for
+       one extra viewport so scroll can dim it into the catalog -->
+  <section class="landing" aria-label="Catalog landing">
+    <div class="landing-sticky">
+    <video class="landing-video"
+      src="frames/hero-video/hero.mp4"
+      autoplay muted loop playsinline preload="auto"
+      aria-hidden="true"></video>
+
+    <div class="landing-hero">
+      <h1 class="landing-title">Chop</h1>
+      <div class="landing-line" aria-hidden="true"></div>
+      <p class="landing-sub">A commemoration in five dishes</p>
+      <p class="landing-catalog">5 Dishes &mdash; Scroll to begin</p>
+
+      <!-- Editorial credit rails: the catalog as a film's title card -->
+      <ul class="landing-credits" aria-hidden="true">
+        <li><span>01</span> Jollof</li>
+        <li><span>02</span> Kilishi</li>
+        <li><span>03</span> Egusi &amp; Eba</li>
+        <li><span>04</span> Suya</li>
+        <li><span>05</span> Moi-Moi</li>
+      </ul>
+      <p class="landing-tag" aria-hidden="true">Filmed in firelight</p>
+    </div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- Dish 01: Jollof Rice (split-stage cinematic) -->
+    <section id="jollof" class="dish-section" data-dish="jollof" data-no="01" data-frame-count="181" aria-label="Dish 01: Jollof Rice">
+      <div class="dish-stage">
+        <canvas class="dish-canvas"
+          role="img"
+          aria-label="Scroll-controlled film of jollof rice: party pot, craft, dissected ingredients, and final plate."
+          aria-describedby="jollof-caption"></canvas>
+
+        <p id="jollof-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling moves through the jollof story: party pot, craft, dissected ingredients, and final plate.</p>
+
+        <div class="dish-cine-text" aria-hidden="true"></div>
+
+        <div class="dish-loader" role="status" aria-live="polite">
+          <p class="dish-loader-text">Loading sequence <span class="dish-loader-count">0</span> / 181</p>
+          <div class="dish-loader-track" aria-hidden="true">
+            <div class="dish-loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img class="noscript-fallback"
+            src="frames/jollof-frames/ezgif-frame-181.jpg"
+            alt="Hero serving of jollof rice, glossy piled grains against black background.">
+        </noscript>
+      </div>
+    </section>
+
+    <aside class="praise" data-dish="jollof" aria-label="In praise of jollof">
+      <p class="praise-no" aria-hidden="true">01</p>
+      <p class="praise-kicker">01 · Jollof</p>
+      <blockquote class="praise-line">Jollof is not lunch. It is an event.</blockquote>
+      <p class="praise-sub">The dish by which parties are judged.</p>
+    </aside>
+
+    <!-- Dish 02: Kilishi (frames ready) -->
+    <section id="kilishi" class="dish-section" data-dish="kilishi" data-no="02" data-frame-count="181" aria-label="Dish 02: Kilishi">
+      <div class="dish-stage">
+        <canvas class="dish-canvas"
+          role="img"
+          aria-label="Scroll-controlled film of kilishi: fire, spice, smoke, tear, and final product."
+          aria-describedby="kilishi-caption"></canvas>
+
+        <p id="kilishi-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling reveals the kilishi-making process from open flame to premium product.</p>
+
+        <div class="dish-cine-text" aria-hidden="true"></div>
+
+        <div class="dish-loader" role="status" aria-live="polite">
+          <p class="dish-loader-text">Loading sequence <span class="dish-loader-count">0</span> / 181</p>
+          <div class="dish-loader-track" aria-hidden="true">
+            <div class="dish-loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img class="noscript-fallback"
+            src="frames/kilishi-frames/ezgif-frame-181.jpg"
+            alt="Finished kilishi product shot against black background.">
+        </noscript>
+      </div>
+    </section>
+
+    <aside class="praise" data-dish="kilishi" aria-label="In praise of kilishi">
+      <p class="praise-no" aria-hidden="true">02</p>
+      <p class="praise-kicker">02 · Kilishi</p>
+      <blockquote class="praise-line">Fire, patience, and a tear that runs fiber by fiber.</blockquote>
+      <p class="praise-sub">Beef, refined by flame.</p>
+    </aside>
+
+    <!-- Dish 03: Egusi & Eba (split-stage cinematic) -->
+    <section id="egusi" class="dish-section" data-dish="egusi" data-no="03" data-frame-count="180" aria-label="Dish 03: Egusi & Eba">
+      <div class="dish-stage">
+        <canvas class="dish-canvas"
+          role="img"
+          aria-label="Scroll-controlled sequence of egusi soup: golden bowl, hand-dropped lumps, dissected ingredients, and the eba scoop."
+          aria-describedby="egusi-caption"></canvas>
+
+        <p id="egusi-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling moves through the egusi story: golden bowl, hand-dropped lumps, dissected ingredients, and the eba scoop.</p>
+
+        <div class="dish-cine-text" aria-hidden="true"></div>
+
+        <div class="dish-loader" role="status" aria-live="polite">
+          <p class="dish-loader-text">Loading sequence <span class="dish-loader-count">0</span> / 180</p>
+          <div class="dish-loader-track" aria-hidden="true">
+            <div class="dish-loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img class="noscript-fallback"
+            src="frames/egusi-frames/ezgif-frame-180.jpg"
+            alt="Bowl of golden egusi soup with melon-seed lumps and greens beside a dome of eba.">
+        </noscript>
+      </div>
+    </section>
+
+    <aside class="praise" data-dish="egusi" aria-label="In praise of egusi and eba">
+      <p class="praise-no" aria-hidden="true">03</p>
+      <p class="praise-kicker">03 · Egusi &amp; Eba</p>
+      <blockquote class="praise-line">Gold you gather, not soup you sip.</blockquote>
+      <p class="praise-sub">Pinch the eba. Scoop it heavy.</p>
+    </aside>
+
+    <!-- Dish 04: Suya (split-stage cinematic) -->
+    <section id="suya" class="dish-section" data-dish="suya" data-no="04" data-frame-count="180" aria-label="Dish 04: Suya">
+      <div class="dish-stage">
+        <canvas class="dish-canvas"
+          role="img"
+          aria-label="Scroll-controlled sequence of suya: charcoal fire, yaji spice storm, smoke and flip, served on newspaper."
+          aria-describedby="suya-caption"></canvas>
+
+        <p id="suya-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling moves through the suya story: charcoal fire, yaji spice, smoke and flip, and the newspaper serve.</p>
+
+        <div class="dish-cine-text" aria-hidden="true"></div>
+
+        <div class="dish-loader" role="status" aria-live="polite">
+          <p class="dish-loader-text">Loading sequence <span class="dish-loader-count">0</span> / 180</p>
+          <div class="dish-loader-track" aria-hidden="true">
+            <div class="dish-loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img class="noscript-fallback"
+            src="frames/suya-frames/ezgif-frame-180.jpg"
+            alt="Sliced suya piled on newspaper with onion rings and tomato.">
+        </noscript>
+      </div>
+    </section>
+
+    <aside class="praise inverted" data-dish="suya" aria-label="In praise of suya">
+      <p class="praise-no" aria-hidden="true">04</p>
+      <p class="praise-kicker">04 · Suya</p>
+      <blockquote class="praise-line">Smoke is the seasoning. Newspaper is the plate.</blockquote>
+      <p class="praise-sub">Eaten standing up, with your hands.</p>
+    </aside>
+
+    <!-- Dish 05: Moi-Moi (split-stage cinematic) -->
+    <section id="moimoi" class="dish-section" data-dish="moimoi" data-no="05" data-frame-count="181" aria-label="Dish 05: Moi-Moi">
+      <div class="dish-stage">
+        <canvas class="dish-canvas"
+          role="img"
+          aria-label="Scroll-controlled sequence of moi-moi: batter pour, steamer, leaf reveal with egg center, plated wedge."
+          aria-describedby="moimoi-caption"></canvas>
+
+        <p id="moimoi-caption" class="visually-hidden">Cinematic scroll timeline. Scrolling moves through the moi-moi story: batter pour, steam, leaf reveal, and the plated wedge.</p>
+
+        <div class="dish-cine-text" aria-hidden="true"></div>
+
+        <div class="dish-loader" role="status" aria-live="polite">
+          <p class="dish-loader-text">Loading sequence <span class="dish-loader-count">0</span> / 181</p>
+          <div class="dish-loader-track" aria-hidden="true">
+            <div class="dish-loader-bar"></div>
+          </div>
+        </div>
+
+        <noscript>
+          <img class="noscript-fallback"
+            src="frames/moi-moi-frames/ezgif-frame-181.jpg"
+            alt="Plated moi-moi wedge beside its egg cross-section.">
+        </noscript>
+      </div>
+    </section>
+
+    <aside class="praise" data-dish="moimoi" aria-label="In praise of moi-moi">
+      <p class="praise-no" aria-hidden="true">05</p>
+      <p class="praise-kicker">05 · Moi-Moi</p>
+      <blockquote class="praise-line">The quietest dish on the table — and the most precise.</blockquote>
+      <p class="praise-sub">Steamed gold, an egg at its heart.</p>
+    </aside>
+
+  </main>
+
+  <!-- Footer: the commemoration close -->
+  <footer class="catalog-footer" aria-label="End of catalog">
+    <p class="footer-kicker">Chop · A commemoration</p>
+    <h2 class="footer-title">Served in honor of the hands that feed us.</h2>
+    <p class="footer-sub">Five dishes · one table · filmed in firelight</p>
+    <div class="catalog-footer-line" aria-hidden="true"></div>
+    <p class="catalog-footer-text">Catalog complete — chop belleful</p>
+  </footer>
+
+  <!-- GSAP (CDN, deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <!-- Lenis smooth scroll (WLT parity: lerped scroll, no body locking) -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js" defer></script>
+  <!-- Dish configs (must load before engine) -->
+  <script src="scripts/dishes.js" defer></script>
+  <!-- Shared engine (reads CHOP_DISHES, auto-discovers sections) -->
+  <script src="scripts/chop-engine.js" defer></script>
+  <!-- Landing hero video driver -->
+  <script src="scripts/hero.js" defer></script>
+
+</body>
+</html>

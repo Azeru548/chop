@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PULSE — 2D Product Showcase</title>
+<meta name="description" content="WLT-style scroll storytelling rebuilt in pure 2D. No Blender, no models.">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+
+<div class="preloader" id="preloader">
+  <div class="pre-logo">PULSE</div>
+  <div class="pre-bar"><span id="preBarFill"></span></div>
+  <div class="pre-text" id="preText">Loading</div>
+</div>
+
+<header>
+  <div class="logo">PULSE<span>.</span></div>
+  <nav>
+    <a data-menu="#home" href="#">Home</a>
+    <a data-menu="#features" href="#">Features</a>
+    <a data-menu="#showcase" href="#">Showcase</a>
+    <a data-menu="#contact" href="#">Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+  <!-- HERO : sticky 2D fake-3D stage -->
+  <section class="stage-wrap">
+    <div class="stage" id="stage">
+      <canvas id="particles"></canvas>
+      <div class="blob b1"></div>
+      <div class="blob b2"></div>
+      <div class="grid-floor"></div>
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+      <div class="ring r3"></div>
+
+      <!-- pure CSS/SVG product : layered headphones -->
+      <div class="product" id="heroProduct">
+        <div class="glow"></div>
+        <svg viewBox="0 0 400 400" class="phones" aria-label="Pulse headphones illustration">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#ff6a00"/><stop offset="1" stop-color="#ff2d78"/>
+            </linearGradient>
+          </defs>
+          <path d="M110 220 C110 120 290 120 290 220" fill="none" stroke="url(#g1)" stroke-width="26" stroke-linecap="round"/>
+          <rect x="78" y="190" width="64" height="120" rx="30" fill="#14141c" stroke="url(#g1)" stroke-width="4"/>
+          <rect x="258" y="190" width="64" height="120" rx="30" fill="#14141c" stroke="url(#g1)" stroke-width="4"/>
+          <rect x="94" y="210" width="32" height="80" rx="16" fill="url(#g1)" opacity="0.9"/>
+          <rect x="274" y="210" width="32" height="80" rx="16" fill="url(#g1)" opacity="0.9"/>
+          <circle cx="200" cy="330" r="6" fill="#ff6a00"><animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite"/></circle>
+        </svg>
+        <div class="shadow"></div>
+      </div>
+
+      <div class="hero-copy">
+        <h1 class="beat beat-1"><span class="kicker">Hi, meet PULSE</span><span>Feel Every<br>Beat Deeper</span></h1>
+        <p class="beat beat-1 sub">Studio sound. Scroll to see how we staged it in pure 2D.</p>
+        <h2 class="beat beat-2">Light On Your Ears,<br>Heavy On Bass</h2>
+        <p class="beat beat-2 sub">38h battery, memory-foam cups, folding frame.</p>
+        <h2 class="beat beat-3">Noise Out.<br>World Muted.</h2>
+        <p class="beat beat-3 sub">Hybrid ANC drops the city to a whisper.</p>
+        <h2 class="beat beat-4">Made To Be Seen<br>On Stage</h2>
+        <p class="beat beat-4 sub">Sunset copper gradient. No 3D model needed.</p>
+      </div>
+      <div class="scroll-hint">scroll ↓</div>
+    </div>
+  </section>
+
+  <!-- FEATURES : pinned like WLT services -->
+  <section id="features" class="features">
+    <div class="feat-pin">
+      <h2>Features</h2>
+      <div class="feat-grid">
+        <div><h3>40mm Drivers</h3><p>Deep, clean lows tuned for live-feel playback.</p></div>
+        <div><h3>Hybrid ANC</h3><p>Two mics per cup erase commute + office hum.</p></div>
+        <div><h3>38H Battery</h3><p>10-min charge = 5 hours. USB-C fast charge.</p></div>
+        <div><h3>Multipoint BT 5.4</h3><p>Phone + laptop connected at the same time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWCASE : WLT "Illustrate Your Brand Vision" equivalent -->
+  <section id="showcase" class="showcase">
+    <div class="show-title"><h2><span>Show Your Product</span><span>In Motion</span></h2></div>
+    <div class="show-sticky">
+      <div class="show-product" id="showProduct">PULSE</div>
+      <p class="cap c1">Spin, zoom and glow — all driven by <b>scroll position</b>.</p>
+      <p class="cap c2">Layered gradients + scale + rotation fake the 3D camera.</p>
+      <p class="cap c3">Swap this word for <b>your product name</b> and ship.</p>
+    </div>
+    <div class="show-end"><h2>Extraordinary</h2></div>
+  </section>
+
+  <!-- MARQUEE + CARDS -->
+  <section class="work">
+    <div class="marquee"><div class="track"><span>Colors — Colors — Colors — Colors — Colors —&nbsp;</span><span>Colors — Colors — Colors — Colors — Colors —&nbsp;</span></div></div>
+    <div class="cards">
+      <div class="card" data-tilt><div class="sw s1"></div><h3>Sunset Copper</h3><p>Hero edition</p></div>
+      <div class="card" data-tilt><div class="sw s2"></div><h3>Midnight</h3><p>Matte black</p></div>
+      <div class="card" data-tilt><div class="sw s3"></div><h3>Glacier</h3><p>Arctic white</p></div>
+      <div class="card" data-tilt><div class="sw s4"></div><h3>Neon Rose</h3><p>Limited drop</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="c-left"><h4>Want This For Your Product?</h4><h3>hello@pulse.demo</h3><p>Tell me your product name + 3 selling points and I'll reskin this page for you.</p></div>
+    <form class="c-right" onsubmit="return false"><label>Name</label><input required><label>Email</label><input type="email" required><label>Your product?</label><textarea required></textarea><button id="sendBtn">Send</button><p id="sent">Message sent (demo) ✓</p></form>
+  </section>
+  <footer>© 2026 PULSE demo — pure 2D rebuild of WLT mechanics.</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

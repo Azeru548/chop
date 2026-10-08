@@ -1,0 +1,6 @@
+# OS junk
+Thumbs.db
+.DS_Store
+
+# Agent process scaffolding (surface briefs, review captures)
+.impeccable/
