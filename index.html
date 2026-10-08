@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHOP — A Commemoration in Five Dishes</title>
+<meta name="description" content="CHOP — a cinematic scroll commemoration of five Nigerian dishes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #100a06; --text: #f6ecda; --muted: #b39a78; --accent: #ff6a00; }
+  * { margin: 0; box-sizing: border-box; }
+  body {
+    min-height: 100vh; min-height: 100svh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1.4rem; text-align: center; padding: 2rem;
+    background: var(--bg); color: var(--text);
+    font-family: system-ui, sans-serif;
+  }
+  h1 {
+    font-family: "Alfa Slab One", Georgia, serif; font-weight: 400;
+    font-size: clamp(3rem, 12vw, 7rem); text-transform: uppercase; line-height: 0.95;
+  }
+  p { font-family: Oswald, sans-serif; letter-spacing: 0.3em; text-transform: uppercase;
+      font-size: 0.8rem; color: var(--muted); }
+  .rule { width: 4rem; height: 2px; background: var(--accent); }
+  a.cta {
+    font-family: Oswald, sans-serif; letter-spacing: 0.24em; text-transform: uppercase;
+    font-size: 0.85rem; color: var(--bg); background: var(--accent);
+    padding: 1rem 2.2rem; text-decoration: none; border-radius: 999px;
+  }
+  a.ghost {
+    font-family: Oswald, sans-serif; letter-spacing: 0.24em; text-transform: uppercase;
+    font-size: 0.75rem; color: var(--muted); text-decoration: none;
+    border-bottom: 1px solid var(--muted); padding-bottom: 2px;
+  }
+</style>
+</head>
+<body>
+  <h1>Chop</h1>
+  <p>A commemoration in five dishes</p>
+  <div class="rule" aria-hidden="true"></div>
+  <a class="cta" href="orbit/">Enter the catalog</a>
+  <a class="ghost" href="wlt-2d-showcase/">2D prototype</a>
+</body>
+</html>
