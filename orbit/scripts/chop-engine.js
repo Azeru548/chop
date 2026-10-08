@@ -717,6 +717,10 @@
 
     initDishNav(controllers);
 
+    // Exposed for the loading gate: it observes each controller's video
+    // element so the gate and the renderer share one download each.
+    window.__CHOP_CONTROLLERS = controllers;
+
     if (!reduceMotion) {
       // Start lerped scroll after controllers exist so ScrollTrigger
       // measures the smoothed document. Deferred Lenis script may land

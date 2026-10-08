@@ -16,6 +16,20 @@
 </head>
 <body>
 
+  <!-- Loading gate: opaque from first paint, releases only when every
+       film on the page is fully buffered. Strict: no partial entry. -->
+  <div id="gate" role="status" aria-live="polite" aria-label="Loading the feast">
+    <p class="gate-brand">CHOP</p>
+    <p class="gate-line" id="gateLine">Preparing the feast</p>
+    <p class="gate-percent" id="gatePercent">0%</p>
+    <div class="gate-track" aria-hidden="true">
+      <div class="gate-bar" id="gateBar"></div>
+    </div>
+    <ul class="gate-films" id="gateFilms" aria-hidden="true"></ul>
+    <button class="gate-retry" id="gateRetry" type="button" hidden>Retry the fire</button>
+  </div>
+  <script>document.documentElement.classList.add('gated');</script>
+
   <!-- Fixed dish nav -->
   <nav class="dish-nav" aria-label="Dish catalog navigation">
     <span class="dish-wordmark" aria-hidden="true">CHOP</span>
@@ -250,6 +264,8 @@
   <script src="scripts/chop-engine.js" defer></script>
   <!-- Landing hero video driver -->
   <script src="scripts/hero.js" defer></script>
+  <!-- Loading gate driver (observes the dish videos; runs last) -->
+  <script src="scripts/gate.js" defer></script>
 
 </body>
 </html>

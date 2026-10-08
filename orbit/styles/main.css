@@ -683,6 +683,142 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
+/* ---- loading gate: strict, opaque from first paint ---- */
+
+html.gated,
+html.gated body {
+  overflow: hidden;
+  height: 100%;
+}
+
+#gate {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg);
+  transition: opacity 0.65s ease;
+}
+
+#gate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+#gate.is-open {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#gate.is-gone {
+  display: none;
+}
+
+.gate-brand {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(2.5rem, 9vw, 4.5rem);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.gate-line {
+  margin: 0;
+  font-family: var(--cond);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.32em;
+  text-indent: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.gate-percent {
+  margin: 0.5rem 0 0;
+  font-family: var(--display);
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.gate-track {
+  width: min(22rem, 70vw);
+  height: 2px;
+  background: var(--line);
+}
+
+.gate-bar {
+  height: 2px;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.gate-films {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-family: var(--cond);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 2;
+}
+
+.gate-films li {
+  color: var(--muted);
+}
+
+.gate-films li span {
+  display: inline-block;
+  width: 1.5em;
+  color: var(--line);
+}
+
+.gate-films li.done {
+  color: var(--text);
+}
+
+.gate-films li.done span {
+  color: var(--accent);
+}
+
+.gate-films li.failed {
+  color: var(--accent);
+}
+
+.gate-retry {
+  margin-top: 0.5rem;
+  font-family: var(--cond);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-indent: 0.28em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--accent);
+  border: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.8rem;
+  cursor: pointer;
+}
+
+.gate-retry[hidden] {
+  display: none;
+}
+
 /* ---- noscript ---- */
 
 .noscript-fallback {
@@ -758,6 +894,10 @@ body.reduced .landing-hero {
 
   .landing-title {
     animation: none;
+  }
+
+  #gate {
+    transition: none;
   }
 
   .beat {
